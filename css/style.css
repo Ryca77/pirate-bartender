@@ -1,0 +1,26 @@
+body {
+	position: relative;
+	max-width: 450px;
+	height: 100%;
+	width: 100%;
+	margin: 0 auto;
+	margin-top: 10px;
+	border: 2px solid black;
+	border-radius: 10px;
+}
+
+#header {
+	margin-left: 10px;
+}
+
+.question1, .question2, .question3, .question4, .question5 {
+	margin: 10px;
+}
+
+#answer {
+	float: right;
+}
+
+#search {
+	margin: 10px;
+}
