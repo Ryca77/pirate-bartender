@@ -16,8 +16,19 @@ var Bartender = function() {
 	];
 
 	this.askQuestion = function(index) {
-		return this.questions[index];
-	};
+		return this.questions[0];
+		for (var i = 0; i < this.questions.length; i++) {
+		return this.questions[i]
+		}
+	}
+
+	this.nextQuestion = function(index) {
+		for (var i = 0; i < this.questions.length; i+1) {
+		return this.askQuestion(i);
+		}
+		/*$('.question'+(i+1)).html(this.questions[i]);
+		}*/
+	}
 
 	this.makeDrink = function(ingredients) {
 		var ingredientsLength = ingredients.length;
@@ -45,17 +56,37 @@ var Ingredients = function () {
 		}
 		return ingredients;
 	}
+
 }
+
+var johnnyPeg = new Bartender();
+$('.order').on('click', function() {
+	johnnyPeg.askQuestion();
+	console.log(johnnyPeg.askQuestion());
+	$('.question').html(johnnyPeg.askQuestion());
+	$('.aye, .nay').show();
+	$('.order').hide();
+});
+
+var newDrink = new Bartender();
+$('.aye').on('click', function() {
+	newDrink.saveAnswer('sweet');
+	console.log(newDrink.answers);
+	console.log(johnnyPeg.makeDrink(drink.ingredientList(newDrink.answers)));
+	$('.drink').html(johnnyPeg.makeDrink(drink.ingredientList(newDrink.answers)));
+});
+
+var newQuestion = new Bartender();
+$('.aye, .nay').on('click', function() {
+	newQuestion.nextQuestion();
+	console.log(newQuestion.nextQuestion());
+});
+
+
 
 var drink = new Ingredients();
 console.log(drink.ingredients.strong);
 
-var johnnyPeg = new Bartender();
-console.log(johnnyPeg.askQuestion(0));
-
-johnnyPeg.saveAnswer('bitter');
-console.log(johnnyPeg.answers);
-console.log(johnnyPeg.makeDrink(johnnyPeg.answers));
 
 
 

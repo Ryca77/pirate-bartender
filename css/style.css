@@ -13,14 +13,23 @@ body {
 	margin-left: 10px;
 }
 
-.question1, .question2, .question3, .question4, .question5 {
+.question {
 	margin: 10px;
 }
 
-#answer {
-	float: right;
+.aye, .nay {
+	margin: 10px;
+	display: none;
 }
 
-#search {
+.drink {
+	margin: 10px;
+}
+
+.drink:first-letter {
+	text-transform: uppercase;
+}
+
+.order {
 	margin: 10px;
 }
