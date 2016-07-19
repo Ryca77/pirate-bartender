@@ -16,18 +16,12 @@ var Bartender = function() {
 	];
 
 	this.askQuestion = function(index) {
-		return this.questions[0];
-		for (var i = 0; i < this.questions.length; i++) {
-		return this.questions[i]
-		}
+		return this.questions[0]
 	}
 
 	this.nextQuestion = function(index) {
-		for (var i = 0; i < this.questions.length; i+1) {
-		return this.askQuestion(i);
-		}
-		/*$('.question'+(i+1)).html(this.questions[i]);
-		}*/
+		this.questions.splice(0,1);
+		$('.question').html(this.questions[0]);
 	}
 
 	this.makeDrink = function(ingredients) {
@@ -79,10 +73,7 @@ $('.aye').on('click', function() {
 var newQuestion = new Bartender();
 $('.aye, .nay').on('click', function() {
 	newQuestion.nextQuestion();
-	console.log(newQuestion.nextQuestion());
 });
-
-
 
 var drink = new Ingredients();
 console.log(drink.ingredients.strong);
