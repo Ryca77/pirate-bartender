@@ -12,7 +12,7 @@ var Bartender = function() {
 		"Do ye like it bitterrr?",
 		"Do ye want somethin sweeet?",
 		"Do ye like a fruity flaverrr?",
-		"What's yer poison?"
+		"This be yer poison:"
 	];
 
 	//ask first question//
@@ -64,6 +64,31 @@ var Ingredients = function () {
 	}
 }
 
+//cocktail name constructor function//
+var drinkName = function () {
+	this.name = {
+		adjective: ["misty", "choppy", "salty", "hairy"],
+		noun: ["peg-leg", "musket-barrel", "parrot-peck", "plunder-stash"]
+	}
+
+	this.getRandoms = function () {
+	var randomAdjective = this.name.adjective[Math.floor(Math.random() * this.name.adjective.length)]
+	console.log(randomAdjective);
+	var randomNoun = this.name.noun[Math.floor(Math.random() * this.name.noun.length)]
+	console.log(randomNoun);
+	$('.drink-name').html(randomAdjective + " " + randomNoun);
+	$('.drink-name').show();
+}
+
+	/*this.getAdjective = function(index) {
+		return this.name.adjective[index];
+	}
+
+	this.getNoun = function(index) {
+		return this.name.noun[index];
+	}*/
+}
+
 //calling functions - ask first question//
 var johnnyPeg = new Bartender();
 $('.order, .order-again').on('click', function() {
@@ -101,25 +126,24 @@ $('.aye').on('click', function() {
 	}
 });
 
-//calling functions - make drink after all questions answered//
-$('.make-drink').on('click', function() {
-	$('.drink').html(johnnyPeg.makeDrink(drink.ingredientList(newDrink.answers)));
-	$('.make-drink').hide();
-	$('.order-again').show();
-});
+/*console.log(newName.getAdjective(0) + " " + newName.getNoun(0));*/
 
-//calling functions - ask remaining questions//
+//calling functions - ask remaining questions and get drink name//
 var newQuestion = new Bartender();
+var newName = new drinkName();
 $('.aye, .nay').on('click', function() {
 	newQuestion.nextQuestion();
-	if($('.question').text() == "What's yer poison?") {
+	if($('.question').text() == "This be yer poison:") {
+		$('.drink').html(johnnyPeg.makeDrink(drink.ingredientList(newDrink.answers)));
 		$('.aye, .nay').hide();
-		$('.make-drink').show();
+		$('.order-again').show();
+		newName.getRandoms();
 	}
 
 //order again//
 $('.order-again').on('click', function() {
 	$('.drink').html("");
+	$('.drink-name').hide();
 });
 
 });
