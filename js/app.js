@@ -73,9 +73,7 @@ var drinkName = function () {
 
 	this.getRandoms = function () {
 		var randomAdjective = this.name.adjective[Math.floor(Math.random() * this.name.adjective.length)]
-		console.log(randomAdjective);
 		var randomNoun = this.name.noun[Math.floor(Math.random() * this.name.noun.length)]
-		console.log(randomNoun);
 		$('.drink-name').html(randomAdjective + " " + randomNoun);
 		$('.drink-name').show();
 	}
@@ -118,8 +116,6 @@ $('.aye').on('click', function() {
 	}
 });
 
-/*console.log(newName.getAdjective(0) + " " + newName.getNoun(0));*/
-
 //calling functions - ask remaining questions and get drink name//
 var newQuestion = new Bartender();
 var newName = new drinkName();
@@ -141,20 +137,3 @@ $('.order-again').on('click', function() {
 });
 
 });
-
-	/*var Drink = function(strong, salty, bitter, sweet, fruity) {
-		this.strong = strong;
-		this.salty = salty;
-		this.bitter = bitter;
-		this.sweet = sweet;
-		this.fruity = fruity;
-	}
-
-	var customer = new Drink(true, false, true, true, true)
-		if(customer.fruity === true) {
-			console.log('cassis');
-		}
-		if(customer.salty !== true) {
-			console.log('no olives');
-		}*/
-
