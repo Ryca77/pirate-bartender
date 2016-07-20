@@ -72,21 +72,13 @@ var drinkName = function () {
 	}
 
 	this.getRandoms = function () {
-	var randomAdjective = this.name.adjective[Math.floor(Math.random() * this.name.adjective.length)]
-	console.log(randomAdjective);
-	var randomNoun = this.name.noun[Math.floor(Math.random() * this.name.noun.length)]
-	console.log(randomNoun);
-	$('.drink-name').html(randomAdjective + " " + randomNoun);
-	$('.drink-name').show();
-}
-
-	/*this.getAdjective = function(index) {
-		return this.name.adjective[index];
+		var randomAdjective = this.name.adjective[Math.floor(Math.random() * this.name.adjective.length)]
+		console.log(randomAdjective);
+		var randomNoun = this.name.noun[Math.floor(Math.random() * this.name.noun.length)]
+		console.log(randomNoun);
+		$('.drink-name').html(randomAdjective + " " + randomNoun);
+		$('.drink-name').show();
 	}
-
-	this.getNoun = function(index) {
-		return this.name.noun[index];
-	}*/
 }
 
 //calling functions - ask first question//
