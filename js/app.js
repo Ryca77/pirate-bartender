@@ -17,7 +17,7 @@ var Bartender = function() {
 
 	//ask first question//
 	this.askQuestion = function(index) {
-		return this.questions[0]
+		return this.questions[0];
 	}
 
 	//ask remaining questions by removing the elements at index 0//
@@ -72,21 +72,11 @@ var drinkName = function () {
 	}
 
 	this.getRandoms = function () {
-	var randomAdjective = this.name.adjective[Math.floor(Math.random() * this.name.adjective.length)]
-	console.log(randomAdjective);
-	var randomNoun = this.name.noun[Math.floor(Math.random() * this.name.noun.length)]
-	console.log(randomNoun);
-	$('.drink-name').html(randomAdjective + " " + randomNoun);
-	$('.drink-name').show();
-}
-
-	/*this.getAdjective = function(index) {
-		return this.name.adjective[index];
+		var randomAdjective = this.name.adjective[Math.floor(Math.random() * this.name.adjective.length)]
+		var randomNoun = this.name.noun[Math.floor(Math.random() * this.name.noun.length)]
+		$('.drink-name').html(randomAdjective + " " + randomNoun);
+		$('.drink-name').show();
 	}
-
-	this.getNoun = function(index) {
-		return this.name.noun[index];
-	}*/
 }
 
 //calling functions - ask first question//
@@ -126,8 +116,6 @@ $('.aye').on('click', function() {
 	}
 });
 
-/*console.log(newName.getAdjective(0) + " " + newName.getNoun(0));*/
-
 //calling functions - ask remaining questions and get drink name//
 var newQuestion = new Bartender();
 var newName = new drinkName();
@@ -149,20 +137,3 @@ $('.order-again').on('click', function() {
 });
 
 });
-
-	/*var Drink = function(strong, salty, bitter, sweet, fruity) {
-		this.strong = strong;
-		this.salty = salty;
-		this.bitter = bitter;
-		this.sweet = sweet;
-		this.fruity = fruity;
-	}
-
-	var customer = new Drink(true, false, true, true, true)
-		if(customer.fruity === true) {
-			console.log('cassis');
-		}
-		if(customer.salty !== true) {
-			console.log('no olives');
-		}*/
-
