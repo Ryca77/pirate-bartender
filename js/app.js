@@ -17,7 +17,7 @@ var Bartender = function() {
 
 	//ask first question//
 	this.askQuestion = function(index) {
-		return this.questions[0]
+		return this.questions[0];
 	}
 
 	//ask remaining questions by removing the elements at index 0//
